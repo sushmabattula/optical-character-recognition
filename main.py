@@ -7,8 +7,6 @@ and draw bounding boxes around it. In the second step program should extract the
 
 Libraries used - pytesseract, openCV
 
-Task 1 submission provided by Resolute AI internship
-
 Rules
 - This code can only take PDFs with single page
 - If you have an image, please convert that image file into pdf file.
@@ -27,7 +25,7 @@ import pytesseract
 from pdf2image import convert_from_path
 
 # COPY AND PASTE THE PDF PATH UNDER THIS LINE
-path = '/home/solomon/Documents/Python_Codes/OCR/example.pdf'
+path = '<path-to>/example.pdf'
 images = convert_from_path(path)
 
 # SAVE THE PDF FILE INTO PNG FILE
@@ -35,7 +33,7 @@ for i in range(len(images)):
     images[i].save('1' + '.png', 'PNG')
 
 
-pytesseract.pytesseract.tesseract_cmd = 'tesseract'
+pytesseract.pytesseract.tesseract_cmd = '<path-to>/tesseract'
 
 # READ THE NEWLY CREATED PNG FILE INTO CV2
 converted_image = cv2.imread('1.png')
